@@ -1,0 +1,95 @@
+# =========================================
+# 🧠 TestPilot AI - Git Ignore File
+# =========================================
+
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*$py.class
+
+# -----------------------------
+# Virtual Environments
+# -----------------------------
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# -----------------------------
+# Environment / Secrets
+# -----------------------------
+.env
+.env.*
+*.env
+
+# -----------------------------
+# OS Files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Logs / Cache
+# -----------------------------
+*.log
+*.out
+*.bak
+*.swp
+.cache/
+logs/
+*.pid
+
+# -----------------------------
+# IDEs / Editors
+# -----------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.iml
+
+# -----------------------------
+# Build / Distribution
+# -----------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+MANIFEST
+*.manifest
+*.spec
+
+# -----------------------------
+# Jupyter / Colab
+# -----------------------------
+.ipynb_checkpoints/
+*.ipynb
+
+# -----------------------------
+# MCP / Runtime Data
+# -----------------------------
+mcp_session_*.json
+mcp_cache/
+browser_context/
+playwright-report/
+test-results/
+output/
+screenshots/
+
+# -----------------------------
+# Misc
+# -----------------------------
+*.tmp
+*.bak
+*.old
+*.orig
+*.rej
+*.swp
+*.swo
