@@ -6,9 +6,7 @@ from utils.helper import safe_serialize
 from config import GEMINI_MODEL_NAME, MCP_SERVERS
 from langgraph.graph import END
 
-# -------------------------------------------------------
-# 🧠 Node 1: LLM Decides Next Step
-# -------------------------------------------------------
+# Node 1: LLM Decides Next Step
 async def llm_decide_next_step(state):
     model = ChatGoogleGenerativeAI(model=GEMINI_MODEL_NAME, temperature=0.2)
     goal = state["goal"]
@@ -74,9 +72,9 @@ Previous steps: {history}
     return {"next_step": next_step, "messages": state["messages"] + [AIMessage(content=str(next_step))]}
 
 
-# -------------------------------------------------------
-# ⚙️ Node 2: Execute via MCP
-# -------------------------------------------------------
+
+# Node 2: Execute via MCP
+
 async def execute_next_step(state):
     next_step = state.get("next_step", {})
     tool = next_step.get("tool")
@@ -125,9 +123,9 @@ async def execute_next_step(state):
     }
 
 
-# -------------------------------------------------------
-# 🧾 Node 3: Check Completion
-# -------------------------------------------------------
+
+# Node 3: Check Completion
+
 async def check_done(state):
     if state.get("done"):
         print(f"\n🏁 Task completed: {state['next_step'].get('reason', 'No reason given')}")
